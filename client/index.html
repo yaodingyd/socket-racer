@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow: visible;
+                background: black;
+                font-family: "Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            }
+            .steering-container {
+                padding: 100px 0;
+                display: flex;
+                justify-content: space-around;
+            }
+            .start {
+                background: linear-gradient(to bottom,#fbfbfb,#e1e1e1);
+                display: block;
+                margin-top: 50px;
+                vertical-align: middle;
+                border: 1px solid #d4d4d4;
+                height: 32px;
+                line-height: 30px;
+                padding: 0 25.6px;
+                font-weight: 300;
+                font-size: 16px;
+                color: #666;
+                text-shadow: 0 1px 1px #fff;
+                margin: 0 auto;
+                text-decoration: none;
+                text-align: center;
+            }
+            .steering {
+                background: linear-gradient(to bottom,#fa9306,#e78705) #F18D05;
+                color: #FFF;
+                border: 1px solid #bf7004;
+                text-shadow: none;
+                display: block;
+                width: 100px;
+                height: 50px;
+                border-radius: 100%;
+                flex: 0 0 150px;
+            }
+            .room {
+                text-align: center;
+                padding-bottom: 20px;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="controller">
+            <div class="steering-container">
+                <button type="button" id="gas" class="steering">GAS</button>
+                <button type="button" id="break" class="steering">BREAK</button>
+            </div>
+            <div class="room">Connect to a room:<input type="text" id="room"/></div>
+            <button type="button" id="start" class="start">START</button>
+        </div>
+        
+        
+        
+        
+        <canvas id="c" style="position: absolute;"></canvas>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="game.js"></script>
+    </body>
+</html>
