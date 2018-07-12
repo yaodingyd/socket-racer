@@ -502,7 +502,7 @@ function gameInit () {
         room = no;
     });
 
-    socket.on('START', () => {
+    socket.on('JOIN_ROOM', () => {
         start = true;
     });
 

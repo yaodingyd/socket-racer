@@ -33,14 +33,17 @@ io.on("connection", function(socket) {
 
   // SEND_EULER_ANGLES is emitted by Controller
   socket.on("SEND_STEERING", function(data) {
+    log(`${socket.room} emit STEERING`, DEBUG_MODE)
     socket.broadcast.to(data.room).emit("EULER_ANGLES", data);
   });
   // SEND_ACCELERATION is emitted by Controller
   socket.on("SEND_GAS", function(data) {
+    log(`${socket.room} emit GAS`, DEBUG_MODE)
     socket.broadcast.to(data.room).emit("GAS", data.gas);
   });
 
   socket.on("SEND_BREAKING", function(data) {
+    log(`${socket.room} emit BREAKING`, DEBUG_MODE)
     socket.broadcast.to(data.room).emit("BREAKING", data.breaking);
   });
 
