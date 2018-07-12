@@ -496,7 +496,7 @@ if (isMobile) {
 }
 
 function gameInit () {
-    controller.hide();
+    gameCanvas.show();
     
     socket.on('ROOM', no => {
         room = no;
@@ -523,6 +523,8 @@ function gameInit () {
 }
 
 function controllerInit () {
+    controller.show();
+
     $('#start').click(() => {
         window.addEventListener('deviceorientation', _handleOrientation);
         start = true;
