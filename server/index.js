@@ -1,5 +1,5 @@
 const DEBUG_MODE = true;
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const serve = require('koa-static');
 const Koa = require('koa');
