@@ -566,12 +566,15 @@ function controllerInit () {
         if (start && base == null) {
             base = event.gamma;
         }
-        if (event.gamma - base > 15) {
+        if (event.gamma - base > 25) {
             right = true;
             left = false;
-        } else if (event.gamma - base < -15) {
+        } else if (event.gamma - base < -25) {
             right = false;
             left = true;
+        } else {
+            left = false;
+            right = false;
         }
         socket.emit("SEND_STEERING", {
             room: room,
