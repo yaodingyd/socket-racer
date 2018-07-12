@@ -526,7 +526,7 @@ function controllerInit () {
     controller.show();
 
     $('#start').click(() => {
-        window.addEventListener('deviceorientation', _handleOrientation);
+        window.addEventListener('deviceorientation',_throttle(_handleOrientation,30));
         start = true;
         room = parseInt($('#room').val().trim());
         socket.emit('SWITCH_ROOMS', {
@@ -590,3 +590,19 @@ function _isMobile () {
 
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }
+
+// simply version
+function _throttle (callback, limit) {
+
+    var wait = false;
+    return function () {
+      if (!wait) {
+  
+        callback.apply(null, arguments);
+        wait = true;
+        setTimeout(function () {
+          wait = false;
+        }, limit);
+      }
+    }
+  }
