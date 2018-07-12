@@ -476,7 +476,7 @@ const game = (function(){
     }
 }());
 
-const socket = io('http://localhost:3000');
+const socket = io('https://socket-racer-js.herokuapp.com/');
 const controller = $('#controller');
 const gameCanvas = $('#c');
 
@@ -582,13 +582,11 @@ function controllerInit () {
 }
 
 function _isMobile () {
-    const w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName("body")[0];
-    const screenWidth = w.innerWidth || e.clientWidth || g.clientWidth;
+    // const w = window,
+    //   d = document,
+    //   e = d.documentElement,
+    //   g = d.getElementsByTagName("body")[0];
+    // const screenWidth = w.innerWidth || e.clientWidth || g.clientWidth;
 
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      ) && screenWidth < 768; // screenWidth is in pixels
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 }
