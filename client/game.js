@@ -119,10 +119,10 @@ const game = (function(){
         context.drawImage(spritesheet,  357, 9, 115, 20, 100, 20, 115, 40);
         
         drawString("Room number is: " + room,{x: 60, y: 90});
-        drawString("Connect to start game",{x: 60, y: 100});
-        drawString("Credits:",{x: 120, y: 120});
-        drawString("code, art: Selim Arsever",{x: 55, y: 130});
-        drawString("font: spicypixel.net",{x: 70, y: 140});
+        drawString("Use your phone to connect room",{x: 40, y: 100});
+        drawString("Original game: Selim Arsever",{x: 55, y: 120});
+        drawString("font: spicypixel.net",{x: 70, y: 130});
+        drawString("Modified by yaodingyd",{x: 70, y: 140});
         if(start){
             clearInterval(splashInterval);
             gameInterval = setInterval(renderGameFrame, 30);
